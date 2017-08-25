@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pruebas Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+</head>
+<body>
+  <div id="app">
+      <h2>{{message}}</h2>
+
+      <prueba-vue></prueba-vue>
+
+      <primer-componente :Nombre="name" :Apellido="surname" ></primer-componente>
+
+      <componentazo :years.sync="years" tech="PHP"></componentazo>
+
+  </div>
+
+  <script type="text/template" id="my_template">
+        <h1> {{Nombre}} {{Apellido}} </h1>
+
+  </script>
+
+  <!-- Podriamos utilizar <template></template> de Vue.js en su lugar -->
+  <script type="text/template" id="componentazo_template">
+    <div>
+        <p> Cuantos años de experiencia tengo con {{ tech }}?</p>
+
+        <p>
+          Respuesta: <strong> {{ years }}</strong>
+
+          <button type="button" @click="add">+</button>
+          <button type="button" :disabled="years == 0" @click="sub">-</button>
+        </p>
+    </div>
+
+  </script>
+
+  <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
